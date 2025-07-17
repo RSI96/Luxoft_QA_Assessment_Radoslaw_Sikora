@@ -1,0 +1,1 @@
+# Luxoft_QA_Assessment_Radoslaw_Sikora
