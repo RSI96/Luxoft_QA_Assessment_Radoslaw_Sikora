@@ -24,7 +24,7 @@ def create_invalid_users():
 #First three tests are fulfilling requirements for this task. The rest is for better coverage.
 #It would be much better to use pytest for test execution but it was not listed in available tools for this task so I tried to do the task without it.
 def TC01_test_get_user():
-    '''Tests Get User with id = 1'''
+    '''Tests Get User with id = 1.'''
     user_data = {"email":"alice@example.com","id":1,"name":"Alice"}
     get_user_response = get_user_by_id(user_data['id']).json()
     try:
