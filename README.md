@@ -6,6 +6,7 @@
 - uiautomator2 - version: 3.3.3
 - Flask - version: 3.1.1
 - Requests - version: 2.32.4
+- Behave - version: 1.2.6
 
 ## Task 1: Mobile Application Testing
 It would be much better to use pytest for test execution but it was not listed in available tools for this task so I tried to do the task without it.
@@ -68,3 +69,17 @@ py -m task2_api_test.py
 - TC05_test_get_user_status_code - Test Get User Status Code. Status code is 200.
 - TC06_test_get_users_status_code - Test Get Users Status Code. Status code is 200.
 - TC07_test_create_user_status_code - Test Create New User Status Code. Status code is 201.
+
+## Task 3: Gherkin Scenario Creation
+
+### Prerequisites
+- Python
+- Behave 
+
+### Test description
+- Test Add operation - Tests add operation with values 1 and 2
+
+#### Run automated tests
+```powershell
+py -m behave
+```
