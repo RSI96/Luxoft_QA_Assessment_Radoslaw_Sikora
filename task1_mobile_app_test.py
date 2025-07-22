@@ -119,7 +119,7 @@ def check_result_value(RESULT_VIEW_SUFFIX):
 # --- Tests ---
 
 def TC01_check_add_operation():
-    '''Tests add aperation with precision to 2 decimal points'''
+    '''Tests add operation with precision to 2 decimal points'''
     connect_to_the_device()
     start_app()
 
@@ -306,7 +306,7 @@ def TC01_check_add_operation():
         print(f'PASSED - TC01 - Add operation. Expected: {expected_result}. Observed: {actual_result}.')
 
 def TC02_check_substract_operation():
-    '''Tests substract aperation with precision to 2 decimal points'''
+    '''Tests substract operation with precision to 2 decimal points'''
     connect_to_the_device()
     start_app()
 
@@ -482,7 +482,7 @@ def TC02_check_substract_operation():
         print(f'PASSED - TC02 - Substract operation. Expected: {expected_result}. Observed: {actual_result}.')
 
 def TC03_check_divide_operation():
-    '''Tests divide aperation with precision to 2 decimal points'''
+    '''Tests divide operation with precision to 2 decimal points'''
     connect_to_the_device()
     start_app()
 
@@ -621,7 +621,7 @@ def TC03_check_divide_operation():
         print(f'PASSED - TC03 - Divide operation. Expected: {expected_result}. Observed: {actual_result}.')
 
 def TC04_check_multiply_operation():
-    '''Tests multiply aperation with precision to 2 decimal points'''
+    '''Tests multiply operation with precision to 2 decimal points'''
     connect_to_the_device()
     start_app()
 
