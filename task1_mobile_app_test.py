@@ -796,8 +796,8 @@ def TC04_check_multiply_operation():
     else:
         print(f'PASSED - TC04 - Multiply operation. Expected: {expected_result}. Observed: {actual_result}.')
 
-def TC05_check_add_operation_for_behave(input1: float, input2: float):
-    '''Tests add operation with precision to 2 decimal points'''
+def TC05_check_add_operation_with_values(input1: float, input2: float):
+    '''Tests add operation with precision to 2 decimal points with inputs'''
     connect_to_the_device()
     start_app()
 
@@ -821,4 +821,4 @@ if __name__ == "__main__":
     TC02_check_substract_operation()
     TC03_check_divide_operation()
     TC04_check_multiply_operation()
-    TC05_check_add_operation_for_behave(1, 2)
+    TC05_check_add_operation_for_reuse(1, 2)
