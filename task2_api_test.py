@@ -24,6 +24,7 @@ def create_invalid_users():
 #First three tests are fulfilling requirements for this task. The rest is for better coverage.
 #It would be much better to use pytest for test execution but it was not listed in available tools for this task so I tried to do the task without it.
 def TC01_test_get_user():
+    '''Tests Get User with id = 1'''
     user_data = {"email":"alice@example.com","id":1,"name":"Alice"}
     get_user_response = get_user_by_id(user_data['id']).json()
     try:
@@ -34,6 +35,7 @@ def TC01_test_get_user():
         print(f'PASSED - TC01 - Test Get User. User retrieval successful.')
 
 def TC02_test_create_user():
+    '''Test Create User.'''
     new_user_data = {
         "name":"Radek",
         "email":"radek@example.com"
@@ -51,6 +53,7 @@ def TC02_test_create_user():
         print(f'PASSED - TC02 - Test Create User. User creation successful.')
 
 def TC03_test_error_handling():
+    '''Test Create User. Status Code is 400.'''
     invalid_users = create_invalid_users()
     for invalid_user in invalid_users:
         invalid_user_response = create_user(invalid_user)
@@ -79,6 +82,7 @@ def TC03_test_error_handling():
 
 #Additional tests for better coverage
 def TC04_test_get_users():
+    '''Test Get User with all available ids.'''
     get_users_response = get_users()
     user_list_length = len(get_users_response.json())
     for i in range(0, user_list_length):
@@ -92,6 +96,7 @@ def TC04_test_get_users():
             print(f'PASSED - TC04 - Test Get User with id = {user_id}.')
 
 def TC05_test_get_user_status_code():
+    '''Test Get User Status Code. Status code is 200.'''
     user_data = {"email":"alice@example.com","id":1,"name":"Alice"}
     get_user_response = get_user_by_id(user_data['id'])
     try:
@@ -102,6 +107,7 @@ def TC05_test_get_user_status_code():
         print(f'PASSED - TC05 - Test Get User Status Code. Status code is 200.')
 
 def TC06_test_get_users_status_code():
+    '''Test Get Users Status Code. Status code is 200.'''
     user_data = {"email":"alice@example.com","id":1,"name":"Alice"}
     get_users_response = get_users()
     try:
@@ -112,6 +118,7 @@ def TC06_test_get_users_status_code():
         print(f'PASSED - TC06 - Test Get Users Status Code. Status code is 200.')
 
 def TC07_test_create_user_status_code():
+    '''Test Create New User Status Code. Status code is 201.'''
     new_user_data = {
         "name":"Radek",
         "email":"radek@example.com"
@@ -120,9 +127,9 @@ def TC07_test_create_user_status_code():
     try:
         assert create_user_response.status_code == 201, 'Status code is not 201.'
     except AssertionError as error:
-        print(f'FAILED - TC07 - Create New User Status Code. Error: {error}.')
+        print(f'FAILED - TC07 - Test Create New User Status Code. Error: {error}.')
     else:
-        print(f'PASSED - TC07 - Create New User Status Code. Status code is 201.')
+        print(f'PASSED - TC07 - Test Create New User Status Code. Status code is 201.')
 
 TC01_test_get_user()
 TC02_test_create_user()
