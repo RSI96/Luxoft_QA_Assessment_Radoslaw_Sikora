@@ -796,9 +796,29 @@ def TC04_check_multiply_operation():
     else:
         print(f'PASSED - TC04 - Multiply operation. Expected: {expected_result}. Observed: {actual_result}.')
 
+def TC05_check_add_operation_for_behave(input1: float, input2: float):
+    '''Tests add operation with precision to 2 decimal points'''
+    connect_to_the_device()
+    start_app()
+
+    #---
+    insert_value_to_input(INPUT1_SUFFIX, input1)
+    insert_value_to_input(INPUT2_SUFFIX, input2)
+    click_element(ADD_BUTTON_SUFFIX)
+    actual_result = round(check_result_value(RESULT_VIEW_SUFFIX), 2)
+    expected_result = round(float(input1+input2), 1)
+    try:
+        assert actual_result == expected_result, 'Operation is not correct'
+    except AssertionError as error:
+        print(f'FAILED - TC01. Error: {error}. Expected: {expected_result}. Observed: {actual_result}.')
+    else:
+        print(f'PASSED - TC01 - Add operation. Expected: {expected_result}. Observed: {actual_result}.')
+        #---
+
 if __name__ == "__main__":
 
     TC01_check_add_operation()
     TC02_check_substract_operation()
     TC03_check_divide_operation()
     TC04_check_multiply_operation()
+    TC05_check_add_operation_for_behave(1, 2)
